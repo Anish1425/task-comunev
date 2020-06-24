@@ -1,0 +1,90 @@
+
+
+
+<section>
+
+<div class="login-box col-md-4">
+  <h1 class="heading">SINGUP</h1>
+  <form [formGroup]="loginForm" (submit)="login()">
+
+
+
+
+    <div class="text-box" [ngClass]="{'invalid':
+        (loginForm.get('firstname').touched || loginForm.get('firstname').dirty) && loginForm.get('firstname').invalid}">
+      <i class="fas fa-na"></i>
+      <input formControlName="firstname" type="text" placeholder="Enter Firstname">
+    </div>
+     <div *ngIf="(loginForm.get('firstname').touched || loginForm.get('firstname').dirty) && loginForm.get('firstname').invalid" class="invalidError">Please enter a
+      valid name</div>
+
+
+
+      <div class="text-box" [ngClass]="{'invalid':
+        (loginForm.get('lastname').touched || loginForm.get('lastname').dirty) && loginForm.get('lastname').invalid}">
+      <i class="fas fa-na"></i>
+      <input formControlName="lastname" type="text" placeholder="Enter Lastname">
+    </div>
+     <div *ngIf="(loginForm.get('lastname').touched || loginForm.get('lastname').dirty) && loginForm.get('lastname').invalid" class="invalidError">Please enter a
+      valid name</div>
+
+    <div class="text-box" [ngClass]="{'invalid':
+        (loginForm.get('email').touched || loginForm.get('email').dirty) && loginForm.get('email').invalid}">
+      <i class="fas fa-at"></i>
+      <input formControlName="email" type="text" placeholder="Enter username">
+    </div>
+      
+      <div *ngIf="(loginForm.get('email').touched || loginForm.get('email').dirty) && loginForm.get('email').invalid" class="invalidError">Please enter a
+      valid username</div>
+
+    <div class="text-box" [ngClass]="{'invalid':
+        (loginForm.get('password').touched || loginForm.get('password').dirty) && loginForm.get('password').invalid}">
+      <i class="fas fa-unlock-alt"></i>
+      <input formControlName="password" type="password" placeholder="Enter Password">
+    </div>
+
+
+
+
+    <div *ngIf="(loginForm.get('password').touched || loginForm.get('password').dirty) && loginForm.get('password').invalid" class="invalidError">Please
+      enter password</div>
+
+<div class="text-box" [ngClass]="{'invalid':
+        (loginForm.get('dateofbirth').touched || loginForm.get('dateofbirth').dirty) && loginForm.get('dateofbirth').invalid}">
+      <label> DOB</label>
+      <input formControlName="dateofbirth" type="date" placeholder="Enter DOB">
+    </div>
+
+     <div *ngIf="(loginForm.get('dateofbirth').touched || loginForm.get('dateofbirth').dirty) && loginForm.get('dateofbirth').invalid" class="invalidError">Please enter a
+      valid DOB</div>
+
+<div class="" [ngClass]="{'invalid':
+        (loginForm.get('dateofbirth').touched || loginForm.get('dateofbirth').dirty) && loginForm.get('dateofbirth').invalid}">
+      <i class=""></i>
+     
+      <select class="text-capitalize text-center" id="country" style="border-radius: 8px;  margin-left: 140px;">
+        
+    <option>select country</option>
+    <option>india</option>
+     <option>USA</option>
+          <option>canada</option>
+     <option>russia</option>
+      <option>UK</option>
+       <option>other</option>
+      </select>
+    </div>
+
+
+
+     <div *ngIf="(loginForm.get('dateofbirth').touched || loginForm.get('dateofbirth').dirty) && loginForm.get('dateofbirth').invalid" class="invalidError">Please enter a
+      valid name</div>
+
+
+
+
+
+
+    <input [ngClass]="{'disabled':loginForm.invalid}" [disabled]="loginForm.invalid" type="submit" class="button shadow" value="SINGUP">
+  </form>
+</div>
+</section>
